@@ -90,7 +90,7 @@ function playRound(player1,player2) {
 }
 
 //now the game round
-function startMain() {
+function startMain(player1data,player2data) {
     let playerName = prompt("Enter player 1 name","player1");
     let playerChar = prompt(`Enter the char choice for ${playerName}`,"0");
     let player1 = createPlayer(playerName,playerChar);
@@ -105,4 +105,35 @@ function startMain() {
     } while (prompt("Do you want to play again(yes/no)?", "no").toLowerCase() === "yes");
 }
 
-startMain();
+// startMain();
+
+const start = document.querySelector("#introPage > p");
+const startPage = document.querySelector("#introPage");
+const playerCard = document.querySelectorAll(".player-card");
+const forms = document.querySelectorAll(".player-card>form");
+start.addEventListener("click",async function(e) {
+    if (!formFilled()) return;
+    e.target.classList.add("click");
+    playerCard.forEach((card)=>card.classList.add("click"));
+    await new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve();
+        },3000);
+    })
+    startPage.style.display = "none";
+    let player1Data = new FormData(forms[0]);
+    let player2Data = new FormData(forms[1]);
+    let player1 = {
+        name: player1Data.get("name"),
+        char: player1Data.get("character"),
+    }
+    let player2 = {
+        name: player2Data.get("name"),
+        char: player2Data.get("character"),
+    }
+    startMain(player1,player2);
+})
+
+function formFilled() {
+    if (forms[0].checkValidity() && forms[1].checkValidity()) return true;
+}

@@ -1,0 +1,44 @@
+body,html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#introPage {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#introPage > p {
+    transition: font-size 3s ease-in,opacity 3s ease-in;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#introPage > p.click {
+    font-size: 100vh;
+    opacity: 0;
+}
+
+.player-card {
+    height: 200px;
+    width: 100px;
+    background-color: aquamarine;
+    transition: transform 0.2s linear;
+}
+
+.player-card.click {
+    transform: scale(0);
+}
+
+input {
+    width: 100%;
+}

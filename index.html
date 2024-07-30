@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-tac-toe</title>
-    <link href="./style.js" rel="stylesheet">
-    <script src="./script.js"></script>
+    <link href="./style.css" rel="stylesheet">
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    
+    <div id="introPage">
+        <div class="player-card">
+            <form action="POST">
+                <legend>Player 1</legend>
+                <label for="player1name">
+                    Enter name<span>*</span>
+                </label>
+                <input type="text" id="player1name" name="name" placeholder="vipul" required>
+                <label for="player1char">
+                    Enter charcter<span>*</span>
+                </label>
+                <input type="text" id="player1char" name="character" placeholder="O" required>
+            </form>
+        </div>
+        <p>START</p>
+        <div class="player-card">
+            <form action="POST">
+                <legend>Player 2</legend>
+                <label for="playe2name">
+                    Enter name<span>*</span>
+                </label>
+                <input type="text" id="player2name" name="name" placeholder="bipul" required>
+                <label for="player2char">
+                    Enter charcter<span>*</span>
+                </label>
+                <input type="text" id="player2char" name="character" placeholder="X" required>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
