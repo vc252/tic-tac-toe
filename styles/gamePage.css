@@ -73,11 +73,11 @@ body,html {
 }
 
 .game-page > div:first-child {
-    animation: slide-in-left 2s ease-out;
+    animation: slide-in-left 1s ease-out;
 }
 
 .game-page > div:last-child {
-    animation: slide-in-right 2s ease-out;
+    animation: slide-in-right 1s ease-out;
 }
 
 @keyframes slide-in-left {
@@ -120,4 +120,15 @@ body,html {
     color: white;
     font-size: 40px;
     font-weight: bold;
+}
+
+.restart button {
+    max-width: 120px;
+    border-radius: 5px;
+    border-style: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    box-sizing: border-box;
+    background-color: greenyellow;
 }

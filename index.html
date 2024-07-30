@@ -16,11 +16,11 @@
                 <ul>
                     <li>
                         <label for="player1name">Enter name<span>*</span></label>
-                        <input type="text" id="player1name" name="name" placeholder="vipul" required>
+                        <input type="text" id="player1name" name="name" placeholder="vipul" required maxlength="10" >
                     </li>
                     <li>
                         <label for="player1char">Enter charcter<span>*</span></label>
-                        <input type="text" id="player1char" name="character" placeholder="O" required>
+                        <input type="text" id="player1char" name="character" placeholder="O" required maxlength="1">
                     </li>
                 </ul>
             </form>
@@ -32,11 +32,11 @@
                 <ul>
                     <li>
                         <label for="player2name">Enter name<span>*</span></label>
-                        <input type="text" id="player2name" name="name" placeholder="bipul" required>
+                        <input type="text" id="player2name" name="name" placeholder="bipul" required maxlength="10">
                     </li>
                     <li>
                         <label for="player2char">Enter charcter<span>*</span></label>
-                        <input type="text" id="player2char" name="character" placeholder="X" required>
+                        <input type="text" id="player2char" name="character" placeholder="X" required maxlength="1">
                     </li>
                 </ul>
             </form>
@@ -46,7 +46,7 @@
         <div>PLAYER 1</div>
         <div class="center">
             <div class="result">
-                ""
+                
             </div>
             <div class="sudoku">
                 <div class="box" data-row="0" data-col="0"></div>
@@ -65,5 +65,8 @@
         </div>
         <div>PLAYER 2</div>
     </div>
+    <audio id="bgMusic" src="./audio/marimba-tropical-african-travel-game-197517.mp3" autoplay loop preload="auto"></audio>
+    <audio id="clickSound" src="./audio/zapsplat_multimedia_button_click_005_53866.mp3"></audio>
+    <audio id="winnersound" src="./audio/Cheering-SoundBible.com-1115515042.wav"></audio>
 </body>
 </html>

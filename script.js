@@ -1,6 +1,22 @@
 //so we are building a tic tac toe game
 const MAX_PLAYS = 9;
 
+document.querySelector("audio#bgMusic").play().catch(error => {
+    console.error("Autoplay was prevented:", error);
+    // Handle autoplay prevention here (e.g., show a play button)
+});
+
+function playClickSound() {
+    const clickSound = document.querySelector("audio#clickSound");
+    clickSound.currentTime = 0; // Rewind to start to allow rapid replay
+    clickSound.play();
+}
+
+function playWinSound() {
+    const winSound = document.getElementById("winnersound");
+    winSound.play();
+}
+
 const Board = (function() {
     //this would be the tic tac toe matrix
     const board = [
@@ -131,6 +147,7 @@ boxes.forEach((box)=>{
         let col = e.target.getAttribute("data-col");
         let validMove = gameConsole.playMove(parseInt(row),parseInt(col));
         if (!validMove) return;
+        playClickSound();
         //display selection on board UI
         box.textContent = player.char;
         //if winner display winner here so we check the status
@@ -138,6 +155,7 @@ boxes.forEach((box)=>{
         console.log(status);
         if (status!="ongoing") {
             if (status==="win") {
+                playWinSound();
                 result.textContent = `${player.name} won!!!`;
             } else {
                 result.textContent = `its a draw!`;
@@ -175,7 +193,7 @@ start.addEventListener("click",async function(e) {
     await new Promise((resolve,reject)=>{
         setTimeout(()=>{
             resolve();
-        },3000);
+        },2200);
     })
     //change the display to the gamePage
     startPage.style.display = "none";
