@@ -90,15 +90,7 @@ function playRound(player1,player2) {
 }
 
 //now the game round
-function startMain(player1data,player2data) {
-    let playerName = prompt("Enter player 1 name","player1");
-    let playerChar = prompt(`Enter the char choice for ${playerName}`,"0");
-    let player1 = createPlayer(playerName,playerChar);
-
-    playerName = prompt("Enter player 2 name","player2");
-    playerChar = prompt(`Enter the char choice for ${playerName}`,"1");
-    let player2= createPlayer(playerName,playerChar);
-
+function startMain(player1,player2) {
     do {
         playRound(player1,player2);
         Board.refresh();
@@ -111,6 +103,7 @@ const start = document.querySelector("#introPage > p");
 const startPage = document.querySelector("#introPage");
 const playerCard = document.querySelectorAll(".player-card");
 const forms = document.querySelectorAll(".player-card>form");
+const gamePage = document.querySelector(".game-page");
 start.addEventListener("click",async function(e) {
     if (!formFilled()) return;
     e.target.classList.add("click");
@@ -121,17 +114,12 @@ start.addEventListener("click",async function(e) {
         },3000);
     })
     startPage.style.display = "none";
+    gamePage.style.display = "flex";
     let player1Data = new FormData(forms[0]);
     let player2Data = new FormData(forms[1]);
-    let player1 = {
-        name: player1Data.get("name"),
-        char: player1Data.get("character"),
-    }
-    let player2 = {
-        name: player2Data.get("name"),
-        char: player2Data.get("character"),
-    }
-    startMain(player1,player2);
+    let player1 = createPlayer(player1Data.get("name"),player1Data.get("character"));
+    let player2 = createPlayer(player2Data.get("name"),player2Data.get("character"));
+    //startMain(player1,player2);
 })
 
 function formFilled() {

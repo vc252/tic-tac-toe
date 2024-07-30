@@ -4,38 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-tac-toe</title>
-    <link href="./style.css" rel="stylesheet">
+    <link href="./styles/startPage.css" rel="stylesheet">
+    <link href="./styles/gamePage.css" rel="stylesheet">
     <script src="./script.js" defer></script>
 </head>
 <body>
     <div id="introPage">
         <div class="player-card">
             <form action="POST">
-                <legend>Player 1</legend>
-                <label for="player1name">
-                    Enter name<span>*</span>
-                </label>
-                <input type="text" id="player1name" name="name" placeholder="vipul" required>
-                <label for="player1char">
-                    Enter charcter<span>*</span>
-                </label>
-                <input type="text" id="player1char" name="character" placeholder="O" required>
+                <legend>PLAYER 1</legend>
+                <ul>
+                    <li>
+                        <label for="player1name">Enter name<span>*</span></label>
+                        <input type="text" id="player1name" name="name" placeholder="vipul" required>
+                    </li>
+                    <li>
+                        <label for="player1char">Enter charcter<span>*</span></label>
+                        <input type="text" id="player1char" name="character" placeholder="O" required>
+                    </li>
+                </ul>
             </form>
         </div>
         <p>START</p>
         <div class="player-card">
             <form action="POST">
-                <legend>Player 2</legend>
-                <label for="playe2name">
-                    Enter name<span>*</span>
-                </label>
-                <input type="text" id="player2name" name="name" placeholder="bipul" required>
-                <label for="player2char">
-                    Enter charcter<span>*</span>
-                </label>
-                <input type="text" id="player2char" name="character" placeholder="X" required>
+                <legend>PLAYER 2</legend>
+                <ul>
+                    <li>
+                        <label for="player2name">Enter name<span>*</span></label>
+                        <input type="text" id="player2name" name="name" placeholder="bipul" required>
+                    </li>
+                    <li>
+                        <label for="player2char">Enter charcter<span>*</span></label>
+                        <input type="text" id="player2char" name="character" placeholder="X" required>
+                    </li>
+                </ul>
             </form>
         </div>
+    </div>
+    <div class="game-page">
+        <div>PLAYER 1</div>
+        <div class="sudoku">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div>PLAYER 2</div>
     </div>
 </body>
 </html>
